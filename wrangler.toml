@@ -15,4 +15,4 @@ pages_build_output_dir = "public"
 [[d1_databases]]
 binding = "DB"
 database_name = "rifa-minnie"
-database_id = "COLE_AQUI_O_DATABASE_ID_DA_CONTA_LUISAFJANSEN"
+database_id = "ed480aa8-522f-4d80-b4de-31316c1b7a63"
