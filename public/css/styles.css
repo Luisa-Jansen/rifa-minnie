@@ -59,7 +59,7 @@ img { max-width: 100%; display: block; }
 .hero-inner { max-width: 1000px; margin: 0 auto; display: grid; gap: 1.6rem; align-items: center; }
 .hero-text h1 { font-size: 2rem; color: var(--rosa-escuro); }
 .apresentacao { white-space: pre-line; font-size: 1.02rem; margin: 0 0 1.2rem; }
-.hero-foto img { width: 100%; max-width: 360px; margin: 0 auto; border-radius: var(--radius); box-shadow: var(--sombra); aspect-ratio: 4/3; object-fit: cover; object-position: center top; background: #fff; }
+.hero-foto img { width: 100%; max-width: 360px; margin: 0 auto; border-radius: var(--radius); box-shadow: var(--sombra); aspect-ratio: 4/3; object-fit: cover; object-position: center center; background: #fff; }
 .hero-foto figcaption { text-align: center; color: var(--texto-suave); font-size: .85rem; margin-top: .5rem; }
 
 /* ---------- Identificação institucional (AADARPA) ---------- */
