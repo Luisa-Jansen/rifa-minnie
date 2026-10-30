@@ -144,8 +144,8 @@ Fluxo validado de ponta a ponta via API:
 
 O ensaio fotográfico é oferecido por **Marcela Garrote**. Em todos os pontos onde o prêmio
 é divulgado (card da campanha e seção do prêmio), o nome **Marcela Garrote** e o
-**@psimarcelagarrote** são links clicáveis que abrem o perfil oficial em nova aba:
-<https://www.instagram.com/psimarcelagarrote/>. Esses links são fixos no HTML (sempre
+**@garrotefotografia** são links clicáveis que abrem o perfil oficial em nova aba:
+<https://www.instagram.com/garrotefotografia/>. Esses links são fixos no HTML (sempre
 aparecem, mesmo que a descrição do prêmio seja editada no painel).
 
 ## 🖼️ Foto da Mini
