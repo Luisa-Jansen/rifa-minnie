@@ -469,19 +469,19 @@ async function salvarConfig(e) {
 
 /* ---------- Pop-ups WhatsApp ---------- */
 function mensagemCadastro({ nome, numeros, valor_total }) {
-  return `Oi, ${nome}! ❤️\n\n` +
+  return `Oi, ${nome}!\n\n` +
     `Seus números da Rifa Solidária da Minnie foram registrados!\n\n` +
-    `🐾 Seus números: ${numerosFmt(numeros)}\n\n` +
-    `💰 Valor total: ${brl(valor_total)}\n\n` +
+    `Seus números: ${numerosFmt(numeros)}\n\n` +
+    `Valor total: ${brl(valor_total)}\n\n` +
     `Obrigada por participar e ajudar a Minnie no tratamento contra a leishmaniose!\n\n` +
-    `Boa sorte e muito obrigada pelo carinho! ❤️`;
+    `Boa sorte e muito obrigada pelo carinho!`;
 }
 function mensagemPagamento({ nome, numeros }) {
-  return `Oi, ${nome}! ❤️\n\n` +
+  return `Oi, ${nome}!\n\n` +
     `Passando para confirmar que seu pagamento da Rifa Solidária da Minnie foi recebido!\n\n` +
     `Seus números confirmados são: ${numerosFmt(numeros)}.\n\n` +
     `Muito obrigada por ajudar a Minnie em seu tratamento e por fazer parte dessa corrente de solidariedade!\n\n` +
-    `Boa sorte! 🐾❤️`;
+    `Boa sorte!`;
 }
 
 function abrirPopupWhats(tipo, dados) {
