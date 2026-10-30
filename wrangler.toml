@@ -1,0 +1,18 @@
+# ============================================================
+# RIFA MINNIE — configuração da aplicação na Cloudflare
+# Projeto Cloudflare Pages (Functions + D1), identificado como "rifa-minnie".
+# Conta de publicação: luisafjansen@gmail.com
+# ============================================================
+
+name = "rifa-minnie"
+compatibility_date = "2024-11-01"
+pages_build_output_dir = "public"
+
+# Banco de dados D1 (SQLite persistente).
+# 1) Autentique-se na conta luisafjansen@gmail.com:  wrangler login
+# 2) Crie o banco nessa conta:                       wrangler d1 create rifa-minnie
+# 3) Cole o "database_id" retornado abaixo (substitui o COLE_AQUI).
+[[d1_databases]]
+binding = "DB"
+database_name = "rifa-minnie"
+database_id = "COLE_AQUI_O_DATABASE_ID_DA_CONTA_LUISAFJANSEN"

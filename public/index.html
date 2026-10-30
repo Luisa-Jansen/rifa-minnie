@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rifa Solidária da Mini — ajude a Mini no tratamento contra a leishmaniose e concorra a um ensaio fotográfico." />
+  <title>Rifa Solidária da Mini ❤️</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <!-- ================= LANDING PÚBLICA ================= -->
+
+  <!-- Seção 1 — Apresentação -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Rifa Solidária da Mini <span aria-hidden="true">❤️</span></h1>
+        <p class="selo-linha">🐾 Uma iniciativa de voluntária do <strong>AADARPA</strong> · Em apoio à causa da proteção animal.</p>
+        <p id="apresentacao" class="apresentacao"></p>
+        <a href="#grade" class="btn btn-primary btn-lg">Quero participar 🐾</a>
+      </div>
+      <figure class="hero-foto">
+        <img id="foto-mini" src="/img/minnie.jpg" alt="Foto da Mini" />
+        <figcaption>A Mini agradece o seu carinho 🐶</figcaption>
+      </figure>
+    </div>
+
+    <!-- Selo institucional da campanha (delicado e discreto) -->
+    <aside class="selo" aria-label="Selo institucional da campanha">
+      <div class="selo-icones" aria-hidden="true"><span>🐾</span><span>❤️</span><span>🏠</span></div>
+      <p class="selo-titulo">Ação Solidária</p>
+      <p class="selo-txt">Em parceria com a causa do<br /><strong>AADARPA — Abrigo dos Animais Refugados</strong></p>
+      <p class="selo-sub">Iniciativa de voluntária.</p>
+    </aside>
+  </header>
+
+  <!-- Texto institucional de apresentação -->
+  <section class="institucional" aria-label="Sobre a iniciativa">
+    <p>Esta é uma iniciativa solidária de uma <strong>voluntária do AADARPA — Abrigo dos Animais Refugados</strong>, realizada em parceria com a causa e o compromisso de proteção animal.</p>
+    <p>A campanha foi criada para ajudar a Mini em seu tratamento contra a leishmaniose, mobilizando pessoas que acreditam que pequenas atitudes podem transformar vidas.</p>
+    <p>Ao participar, você também fortalece essa corrente de solidariedade em prol dos animais. 🐾</p>
+  </section>
+
+  <!-- Seção 2 — Informações da campanha -->
+  <section class="info" aria-label="Informações da campanha">
+    <div class="info-grid">
+      <div class="info-card"><span class="info-ic">🔢</span><strong id="info-total">100</strong><span>números disponíveis</span></div>
+      <div class="info-card"><span class="info-ic">💰</span><strong id="info-valor">R$ 20,00</strong><span>por número</span></div>
+      <div class="info-card"><span class="info-ic">📸</span><strong>Ensaio fotográfico</strong><span>por <a class="link-insta" href="https://www.instagram.com/psimarcelagarrote/" target="_blank" rel="noopener noreferrer">Marcela Garrote</a></span></div>
+      <div class="info-card"><span class="info-ic">🐾</span><strong>Tratamento da Mini</strong><span>destino da arrecadação</span></div>
+    </div>
+  </section>
+
+  <!-- Seção 3 — Prêmio -->
+  <section class="premio" aria-label="Prêmio">
+    <h2>🎁 Prêmio: <span id="premio-titulo">um ensaio fotográfico!</span></h2>
+    <p class="premio-desc">
+      Além de ajudar a Mini em seu tratamento, você concorre a um ensaio fotográfico especial,
+      oferecido pela profissional
+      <a class="link-insta" href="https://www.instagram.com/psimarcelagarrote/" target="_blank" rel="noopener noreferrer">Marcela Garrote</a>.
+    </p>
+    <p class="premio-prof">
+      <strong>Conheça o trabalho da profissional:</strong>
+      <a class="link-insta" href="https://www.instagram.com/psimarcelagarrote/" target="_blank" rel="noopener noreferrer">@psimarcelagarrote</a>
+    </p>
+    <p id="premio-descricao" class="premio-desc premio-extra"></p>
+    <div id="premio-imagens" class="premio-imagens"></div>
+  </section>
+
+  <!-- Seção 4 — Acompanhamento da arrecadação -->
+  <section class="acompanhamento" aria-label="Acompanhamento da arrecadação">
+    <h2>📊 Acompanhe a arrecadação</h2>
+    <div class="stats-grid">
+      <div class="stat stat-pago"><strong id="st-pagos">0</strong><span>Pagos</span></div>
+      <div class="stat stat-reservado"><strong id="st-reservados">0</strong><span>Reservados</span></div>
+      <div class="stat stat-disponivel"><strong id="st-disponiveis">100</strong><span>Disponíveis</span></div>
+      <div class="stat stat-valor"><strong id="st-arrecadado">R$ 0,00</strong><span>Arrecadado</span></div>
+    </div>
+    <div class="progresso" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressbar">
+      <div class="progresso-barra" id="progresso-barra"></div>
+      <span class="progresso-label" id="progresso-label">0% pagos</span>
+    </div>
+    <p class="nota">Apenas pagamentos confirmados são contabilizados como arrecadação. Reservas aguardam confirmação.</p>
+  </section>
+
+  <!-- Seção 5 — Grade interativa -->
+  <section class="grade-sec" id="grade" aria-label="Grade de números">
+    <h2>🎟️ Escolha seus números</h2>
+    <div class="legenda">
+      <span><i class="dot d-disp"></i> Disponível</span>
+      <span><i class="dot d-res"></i> Reservado</span>
+      <span><i class="dot d-pago"></i> Pago</span>
+    </div>
+    <div id="grade-numeros" class="grade" aria-live="polite"></div>
+    <p class="nota">Toque nos números disponíveis (verdes) para selecioná-los.</p>
+  </section>
+
+  <!-- Painel de seleção fixo (aparece ao selecionar) -->
+  <div id="selecao-bar" class="selecao-bar oculto" aria-live="polite">
+    <div class="selecao-info">
+      <span><strong id="sel-qtd">0</strong> número(s)</span>
+      <span id="sel-numeros" class="sel-numeros"></span>
+      <span class="sel-total">Total: <strong id="sel-total">R$ 0,00</strong></span>
+    </div>
+    <button id="btn-participar" class="btn btn-primary">Participar</button>
+  </div>
+
+  <!-- Footer com acesso administrativo discreto -->
+  <footer class="rodape">
+    <p>Feito com ❤️ para a Mini · Rifa Solidária</p>
+    <p class="rodape-inst">Ação solidária de voluntária, em parceria com a causa do <strong>AADARPA — Abrigo dos Animais Refugados</strong>.</p>
+    <button id="btn-area-admin" class="link-admin">Área administrativa</button>
+  </footer>
+
+
+  <!-- ================= MODAIS ================= -->
+
+  <!-- Modal: Reserva pública -->
+  <div class="modal-overlay oculto" id="modal-reserva">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="reserva-titulo">
+      <button class="modal-x" data-fechar="modal-reserva" aria-label="Fechar">✕</button>
+      <h3 id="reserva-titulo">Finalizar participação 🐾</h3>
+      <p class="modal-sub">Confira seus números e preencha seus dados. Sua reserva será confirmada pela administradora após o pagamento via Pix.</p>
+      <div class="resumo-sel">
+        <span id="reserva-numeros" class="chips"></span>
+        <span class="resumo-total"><span id="reserva-qtd">0</span> número(s) · <strong id="reserva-total">R$ 0,00</strong></span>
+      </div>
+      <form id="form-reserva">
+        <label>Nome completo
+          <input type="text" id="reserva-nome" required maxlength="120" autocomplete="name" />
+        </label>
+        <label>Telefone / WhatsApp
+          <input type="tel" id="reserva-telefone" required maxlength="40" placeholder="(00) 00000-0000" autocomplete="tel" />
+        </label>
+        <div id="reserva-erro" class="erro oculto"></div>
+        <button type="submit" class="btn btn-primary btn-block">Reservar meus números</button>
+      </form>
+
+      <div class="pix-box">
+        <h4>💳 Pagamento via Pix</h4>
+        <div id="pix-conteudo">
+          <p id="pix-sem-dados" class="nota">As instruções de pagamento serão informadas pela administradora.</p>
+          <div id="pix-dados" class="oculto">
+            <img id="pix-qr" class="pix-qr oculto" alt="QR Code Pix" />
+            <p class="pix-linha"><strong>Chave:</strong> <span id="pix-chave"></span></p>
+            <p class="pix-linha"><strong>Titular:</strong> <span id="pix-titular"></span></p>
+            <div id="pix-cec-box" class="oculto">
+              <label>Pix Copia e Cola
+                <textarea id="pix-cec" readonly rows="3"></textarea>
+              </label>
+              <button type="button" id="btn-copiar-pix" class="btn btn-sec btn-block">Copiar código Pix</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Sucesso da reserva pública -->
+  <div class="modal-overlay oculto" id="modal-reserva-ok">
+    <div class="modal modal-sm" role="dialog" aria-modal="true">
+      <h3>Reserva registrada! 🎉</h3>
+      <p class="modal-sub">Obrigada por ajudar a Mini! Seus números foram <strong>reservados</strong> e aguardam a confirmação do pagamento.</p>
+      <div id="reserva-ok-resumo" class="resumo-sel"></div>
+      <p class="nota">Realize o pagamento via Pix e aguarde a confirmação da administradora. 🐾</p>
+      <button class="btn btn-primary btn-block" data-fechar="modal-reserva-ok">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Modal: Login administrativo -->
+  <div class="modal-overlay oculto" id="modal-login">
+    <div class="modal modal-sm" role="dialog" aria-modal="true" aria-labelledby="login-titulo">
+      <button class="modal-x" data-fechar="modal-login" aria-label="Fechar">✕</button>
+      <h3 id="login-titulo">🔒 Área administrativa</h3>
+      <p class="modal-sub">Acesso restrito à administradora da rifa.</p>
+      <form id="form-login">
+        <label>Senha
+          <input type="password" id="login-senha" required autocomplete="current-password" />
+        </label>
+        <div id="login-erro" class="erro oculto"></div>
+        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal/painel: Administrativo -->
+  <div class="modal-overlay oculto" id="modal-admin">
+    <div class="painel" role="dialog" aria-modal="true" aria-label="Painel administrativo">
+      <header class="painel-top">
+        <h3>Painel · Rifa da Mini 🐾</h3>
+        <div class="painel-top-acoes">
+          <button id="btn-logout" class="btn btn-sec btn-sm">Sair</button>
+          <button class="modal-x" data-fechar="modal-admin" aria-label="Fechar painel">✕</button>
+        </div>
+      </header>
+
+      <nav class="abas">
+        <button class="aba ativa" data-aba="dashboard">Resumo</button>
+        <button class="aba" data-aba="cadastrar">Cadastrar</button>
+        <button class="aba" data-aba="participantes">Participantes</button>
+        <button class="aba" data-aba="historico">Histórico</button>
+        <button class="aba" data-aba="config">Configurações</button>
+      </nav>
+
+      <div class="painel-corpo">
+        <!-- Aba Dashboard -->
+        <section class="aba-conteudo ativa" data-painel="dashboard">
+          <div class="dash-grid" id="dash-grid"></div>
+        </section>
+
+        <!-- Aba Cadastrar -->
+        <section class="aba-conteudo" data-painel="cadastrar">
+          <h4>Cadastro manual de participante</h4>
+          <form id="form-cadastro">
+            <label>Nome completo
+              <input type="text" id="cad-nome" required maxlength="120" />
+            </label>
+            <label>Telefone / WhatsApp
+              <input type="tel" id="cad-telefone" required maxlength="40" placeholder="(00) 00000-0000" />
+            </label>
+            <label>Números (clique para selecionar)</label>
+            <div id="cad-grade" class="grade grade-mini"></div>
+            <div class="cad-resumo">
+              <span><strong id="cad-qtd">0</strong> número(s) · <span id="cad-sel"></span></span>
+              <span>Total: <strong id="cad-total">R$ 0,00</strong></span>
+            </div>
+            <label class="inline">
+              <input type="checkbox" id="cad-pago" /> Já está pago (marcar como confirmado)
+            </label>
+            <div id="cad-erro" class="erro oculto"></div>
+            <button type="submit" class="btn btn-primary btn-block">Cadastrar e gerar mensagem</button>
+          </form>
+        </section>
+
+        <!-- Aba Participantes -->
+        <section class="aba-conteudo" data-painel="participantes">
+          <div class="busca-box">
+            <input type="search" id="busca-part" placeholder="Pesquisar por nome, telefone ou número..." />
+          </div>
+          <div id="lista-part" class="lista-part"></div>
+        </section>
+
+        <!-- Aba Histórico -->
+        <section class="aba-conteudo" data-painel="historico">
+          <h4>Histórico de operações</h4>
+          <div id="lista-hist" class="lista-hist"></div>
+        </section>
+
+        <!-- Aba Configurações -->
+        <section class="aba-conteudo" data-painel="config">
+          <h4>Configurações editáveis</h4>
+          <form id="form-config">
+            <label>Valor por número (R$)
+              <input type="number" id="cfg-valor" min="1" step="1" />
+            </label>
+            <label>Texto de apresentação
+              <textarea id="cfg-apresentacao" rows="4"></textarea>
+            </label>
+            <label>Foto da Mini (URL)
+              <input type="text" id="cfg-foto" placeholder="/img/minnie.jpg ou https://..." />
+            </label>
+            <label>Título do prêmio
+              <input type="text" id="cfg-premio-titulo" />
+            </label>
+            <label>Descrição do prêmio
+              <textarea id="cfg-premio-descricao" rows="3"></textarea>
+            </label>
+            <label>Imagens do ensaio (URLs separadas por vírgula)
+              <textarea id="cfg-premio-imagens" rows="2" placeholder="https://..., https://..."></textarea>
+            </label>
+            <fieldset>
+              <legend>Pix</legend>
+              <label>Chave Pix <input type="text" id="cfg-pix-chave" /></label>
+              <label>Nome do titular <input type="text" id="cfg-pix-titular" /></label>
+              <label>QR Code (URL da imagem) <input type="text" id="cfg-pix-qrcode" /></label>
+              <label>Pix Copia e Cola <textarea id="cfg-pix-cec" rows="3"></textarea></label>
+            </fieldset>
+            <div id="cfg-msg" class="ok oculto"></div>
+            <button type="submit" class="btn btn-primary btn-block">Salvar configurações</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Pop-up de WhatsApp (cadastro) -->
+  <div class="modal-overlay oculto" id="modal-whats">
+    <div class="modal modal-sm" role="dialog" aria-modal="true">
+      <button class="modal-x" data-fechar="modal-whats" aria-label="Fechar">✕</button>
+      <h3 id="whats-titulo">Cadastro realizado com sucesso!</h3>
+      <div id="whats-resumo" class="resumo-sel"></div>
+      <label>Mensagem para o participante
+        <textarea id="whats-msg" readonly rows="9"></textarea>
+      </label>
+      <button id="btn-copiar-whats" class="btn btn-primary btn-block">COPIAR MENSAGEM PARA WHATSAPP</button>
+      <p id="whats-copiado" class="ok oculto">Mensagem copiada! Agora é só colar no WhatsApp.</p>
+      <button class="btn btn-sec btn-block" data-fechar="modal-whats">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Modal: Liberar número (autorização) -->
+  <div class="modal-overlay oculto" id="modal-liberar">
+    <div class="modal modal-sm" role="dialog" aria-modal="true">
+      <button class="modal-x" data-fechar="modal-liberar" aria-label="Fechar">✕</button>
+      <h3>🔓 Solicitar liberação de número</h3>
+      <p class="modal-sub" id="liberar-sub"></p>
+      <form id="form-liberar">
+        <label>Motivo da liberação
+          <input type="text" id="liberar-motivo" required maxlength="300" />
+        </label>
+        <label>Confirme a senha administrativa
+          <input type="password" id="liberar-senha" required autocomplete="current-password" />
+        </label>
+        <div id="liberar-erro" class="erro oculto"></div>
+        <button type="submit" class="btn btn-perigo btn-block">Liberar número(s)</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast oculto"></div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

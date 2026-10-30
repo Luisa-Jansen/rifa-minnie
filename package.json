@@ -1,0 +1,12 @@
+{
+  "name": "rifa-minnie",
+  "version": "1.0.0",
+  "description": "Rifa Minnie — landing page pública + painel administrativo (Cloudflare Pages + Functions + D1)",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler pages dev public",
+    "db:local": "wrangler d1 execute rifa-minnie --local --file=./schema.sql",
+    "db:remote": "wrangler d1 execute rifa-minnie --remote --file=./schema.sql",
+    "deploy": "wrangler pages deploy public --project-name=rifa-minnie --branch=main"
+  }
+}

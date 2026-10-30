@@ -1,0 +1,8 @@
+node_modules/
+.wrangler/
+.dev.vars
+.env
+.env.*
+*ACESSOS PESSOAIS*
+dist/
+.DS_Store
