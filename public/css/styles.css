@@ -88,10 +88,40 @@ img { max-width: 100%; display: block; }
 section { max-width: 1000px; margin: 0 auto; padding: 2rem 1.2rem; }
 section h2 { font-size: 1.4rem; color: var(--rosa-escuro); text-align: center; }
 
-.info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .9rem; }
-.info-card { background: #fff; border: 1px solid var(--cinza-borda); border-radius: var(--radius); padding: 1rem; text-align: center; box-shadow: var(--sombra); }
-.info-card .info-ic { font-size: 1.6rem; display: block; }
-.info-card strong { display: block; font-size: 1.1rem; margin: .3rem 0 .1rem; color: var(--rosa-escuro); }
+.info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.info-card {
+  position: relative;
+  background: linear-gradient(180deg, #fff, #fffafb);
+  border: 1px solid var(--cinza-borda);
+  border-radius: var(--radius);
+  padding: 1.5rem 1rem 1.2rem;
+  text-align: center;
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.info-card::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+  background: linear-gradient(90deg, var(--rosa), var(--rosa-escuro));
+  opacity: .9;
+}
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(209, 87, 122, .2);
+  border-color: var(--rosa);
+}
+.info-card .info-ic {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px; margin-bottom: .7rem;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--rosa-claro), #ffe0ea);
+  color: var(--rosa-escuro);
+  box-shadow: inset 0 0 0 1px rgba(209, 87, 122, .12), 0 4px 10px rgba(209, 87, 122, .14);
+  transition: transform .18s ease;
+}
+.info-card .info-ic svg { width: 26px; height: 26px; }
+.info-card:hover .info-ic { transform: scale(1.08) rotate(-3deg); }
+.info-card strong { display: block; font-size: 1.15rem; margin: .1rem 0 .2rem; color: var(--rosa-escuro); }
 .info-card span:last-child { color: var(--texto-suave); font-size: .85rem; }
 
 .premio { text-align: center; }
@@ -104,7 +134,7 @@ section h2 { font-size: 1.4rem; color: var(--rosa-escuro); text-align: center; }
   color: var(--rosa-escuro); font-weight: 700; text-decoration: underline;
   text-underline-offset: 2px; white-space: nowrap;
 }
-.link-insta::before { content: "📷 "; text-decoration: none; }
+.link-insta::before { content: ""; text-decoration: none; }
 .link-insta:hover, .link-insta:focus { color: var(--vermelho); text-decoration: underline; }
 .info-card .link-insta { font-weight: 700; }
 .premio-imagens { display: flex; gap: .8rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; }
