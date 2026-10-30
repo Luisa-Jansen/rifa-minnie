@@ -295,6 +295,53 @@ legend { font-weight: 700; color: var(--rosa-escuro); padding: 0 .4rem; }
 /* ---------- Toast ---------- */
 .toast { position: fixed; bottom: 1.2rem; left: 50%; transform: translateX(-50%); background: var(--texto); color: #fff; padding: .7rem 1.2rem; border-radius: 999px; z-index: 200; font-size: .9rem; box-shadow: var(--sombra); }
 
+/* ---------- Popup "Compre minha rifa" ---------- */
+.popup-overlay {
+  position: fixed; inset: 0; z-index: 150;
+  display: grid; place-items: center; padding: 1.2rem;
+  background: rgba(74, 59, 66, .45);
+  backdrop-filter: blur(2px);
+  animation: popup-fade .25s ease;
+}
+.popup-compre {
+  position: relative;
+  background: var(--creme);
+  border: 2px solid var(--rosa);
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  padding: .6rem;
+  width: auto;
+  max-width: min(92vw, 420px);
+  max-height: 88vh;
+  animation: popup-pop .3s cubic-bezier(.2, .8, .3, 1.2);
+}
+.popup-compre img {
+  display: block;
+  width: 100%; height: auto;
+  max-height: calc(88vh - 1.2rem);
+  object-fit: contain;
+  border-radius: calc(var(--radius) - 6px);
+}
+.popup-x {
+  position: absolute; top: -12px; right: -12px;
+  width: 34px; height: 34px;
+  display: grid; place-items: center;
+  background: #fff; color: var(--rosa-escuro);
+  border: 2px solid var(--rosa);
+  border-radius: 999px;
+  font-size: 1rem; line-height: 1; cursor: pointer;
+  box-shadow: var(--sombra);
+  transition: transform .15s ease, background .15s ease;
+}
+.popup-x:hover { transform: scale(1.08); background: var(--rosa-claro); }
+
+@keyframes popup-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes popup-pop { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: scale(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .popup-overlay, .popup-compre { animation: none; }
+}
+
 /* ---------- Responsivo ---------- */
 @media (min-width: 720px) {
   .hero-inner { grid-template-columns: 1.3fr 1fr; }

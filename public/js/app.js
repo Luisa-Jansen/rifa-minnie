@@ -509,6 +509,72 @@ async function copiarWhats() {
 }
 
 /* ============================================================
+   POPUP "COMPRE MINHA RIFA"
+   Lembrete emocional exibido enquanto o visitante escolhe os
+   números. Não interrompe a navegação inicial, não reaparece
+   na mesma sessão após ser fechado e não bloqueia a seleção.
+   ============================================================ */
+const POPUP_KEY = "popupCompreVisto";
+let popupTimer = null;
+
+function fecharPopupCompre() {
+  const ov = $("#popup-compre");
+  if (!ov || ov.classList.contains("oculto")) return;
+  ov.classList.add("oculto");
+  ov.setAttribute("aria-hidden", "true");
+  // Marca como visto para não reaparecer nesta sessão de navegação.
+  try { sessionStorage.setItem(POPUP_KEY, "1"); } catch { /* ignore */ }
+}
+
+function abrirPopupCompre() {
+  const ov = $("#popup-compre");
+  if (!ov) return;
+  let visto = false;
+  try { visto = sessionStorage.getItem(POPUP_KEY) === "1"; } catch { /* ignore */ }
+  if (visto) return;
+  ov.classList.remove("oculto");
+  ov.setAttribute("aria-hidden", "false");
+}
+
+function configurarPopupCompre() {
+  const ov = $("#popup-compre");
+  const grade = $("#grade");
+  if (!ov || !grade) return;
+
+  // Fechar: botão X e clique fora da imagem.
+  $("#popup-compre-x").addEventListener("click", fecharPopupCompre);
+  ov.addEventListener("click", (e) => { if (e.target === ov) fecharPopupCompre(); });
+
+  // Dispara quando o visitante chega à área de seleção dos números,
+  // após alguns segundos de interação, sem interromper o início.
+  const agendar = () => {
+    let visto = false;
+    try { visto = sessionStorage.getItem(POPUP_KEY) === "1"; } catch { /* ignore */ }
+    if (visto || popupTimer) return;
+    popupTimer = setTimeout(abrirPopupCompre, 3500);
+  };
+
+  if ("IntersectionObserver" in window) {
+    const obs = new IntersectionObserver((entradas) => {
+      for (const ent of entradas) {
+        if (ent.isIntersecting) { agendar(); obs.disconnect(); break; }
+      }
+    }, { threshold: 0.3 });
+    obs.observe(grade);
+  } else {
+    // Fallback simples: agenda ao detectar scroll até a grade.
+    const aoRolar = () => {
+      const r = grade.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.8) {
+        agendar();
+        window.removeEventListener("scroll", aoRolar);
+      }
+    };
+    window.addEventListener("scroll", aoRolar, { passive: true });
+  }
+}
+
+/* ============================================================
    INICIALIZAÇÃO E EVENTOS
    ============================================================ */
 
@@ -546,9 +612,14 @@ function ligarEventos() {
   // Esc fecha o modal visível mais acima
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
+    const popup = $("#popup-compre");
+    if (popup && !popup.classList.contains("oculto")) { fecharPopupCompre(); return; }
     const abertos = $$(".modal-overlay:not(.oculto)");
     if (abertos.length) abertos[abertos.length - 1].classList.add("oculto");
   });
+
+  // Popup emocional "Compre minha rifa" na seleção de números
+  configurarPopupCompre();
 }
 
 function iniciarPolling() {
