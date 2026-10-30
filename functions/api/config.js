@@ -1,5 +1,5 @@
 /* GET /api/config — configurações públicas da campanha (textos, prêmio, Pix,
-   foto da Mini, valor do número). Usado para renderizar a landing page.
+   foto da Minnie, valor do número). Usado para renderizar a landing page.
    A edição é feita pela rota protegida /api/admin/config. */
 import { json, bad, lerConfig } from "./_shared.js";
 

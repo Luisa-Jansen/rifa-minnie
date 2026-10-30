@@ -72,6 +72,7 @@ img { max-width: 100%; display: block; }
   padding: 1rem 1.2rem; box-shadow: var(--sombra);
 }
 .selo-icones { font-size: 1.25rem; display: flex; gap: .5rem; justify-content: center; margin-bottom: .3rem; }
+.selo-logo { width: 84px; height: 84px; object-fit: contain; margin: 0 auto .5rem; }
 .selo-titulo { font-size: .8rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 800; color: var(--rosa-escuro); margin: 0; }
 .selo-txt { font-size: .85rem; color: var(--texto); margin: .35rem 0 .2rem; line-height: 1.4; }
 .selo-txt strong { color: var(--rosa-escuro); }

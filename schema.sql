@@ -98,7 +98,7 @@ INSERT OR IGNORE INTO config (chave, valor) VALUES
  ('total_numeros', '100'),
  ('premio_titulo', 'um ensaio fotográfico!'),
  ('premio_descricao', ''),
- ('apresentacao', 'Estamos realizando esta rifa para ajudar a Mini em seu tratamento contra a leishmaniose. Cada número adquirido representa uma contribuição importante para que ela tenha acesso à medicação e aos cuidados necessários.\n\nAlém de ajudar a Mini, você ainda concorre a um ensaio fotográfico!'),
+ ('apresentacao', 'Estamos realizando esta rifa para ajudar a Minnie em seu tratamento contra a leishmaniose. Cada número adquirido representa uma contribuição importante para que ela tenha acesso à medicação e aos cuidados necessários.\n\nAlém de ajudar a Minnie, você ainda concorre a um ensaio fotográfico!'),
  ('foto_mini', '/img/minnie.jpg'),
  ('pix_chave', ''),
  ('pix_titular', ''),
