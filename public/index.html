@@ -228,7 +228,12 @@
       <p class="modal-sub">Acesso restrito à administradora da rifa.</p>
       <form id="form-login">
         <label>Senha
-          <input type="password" id="login-senha" required autocomplete="current-password" />
+          <div class="senha-wrap">
+            <input type="password" id="login-senha" required autocomplete="current-password" />
+            <button type="button" class="olho" data-olho="login-senha" aria-label="Mostrar senha" aria-pressed="false">
+              <svg class="olho-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
         </label>
         <div id="login-erro" class="erro oculto"></div>
         <button type="submit" class="btn btn-primary btn-block">Entrar</button>
@@ -362,7 +367,12 @@
           <input type="text" id="liberar-motivo" required maxlength="300" />
         </label>
         <label>Confirme a senha administrativa
-          <input type="password" id="liberar-senha" required autocomplete="current-password" />
+          <div class="senha-wrap">
+            <input type="password" id="liberar-senha" required autocomplete="current-password" />
+            <button type="button" class="olho" data-olho="liberar-senha" aria-label="Mostrar senha" aria-pressed="false">
+              <svg class="olho-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
         </label>
         <div id="liberar-erro" class="erro oculto"></div>
         <button type="submit" class="btn btn-perigo btn-block">Liberar número(s)</button>

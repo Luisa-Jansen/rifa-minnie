@@ -87,6 +87,18 @@ img { max-width: 100%; display: block; }
 
 .rodape-inst { font-size: .78rem; max-width: 460px; margin: .4rem auto; opacity: .85; }
 
+/* ---------- Campo de senha com "olhinho" ---------- */
+.senha-wrap { position: relative; }
+.senha-wrap input { padding-right: 2.8rem; }
+.olho {
+  position: absolute; top: 50%; right: .4rem; transform: translateY(-50%);
+  background: none; border: none; cursor: pointer; padding: .4rem;
+  color: var(--texto-suave); display: inline-flex; align-items: center; border-radius: 8px;
+}
+.olho:hover, .olho:focus { color: var(--rosa-escuro); }
+.olho .olho-ic { width: 22px; height: 22px; }
+.olho.ativo { color: var(--rosa-escuro); }
+
 /* ---------- Seções ---------- */
 section { max-width: 1000px; margin: 0 auto; padding: 2rem 1.2rem; }
 section h2 { font-size: 1.4rem; color: var(--rosa-escuro); text-align: center; }

@@ -609,6 +609,17 @@ function ligarEventos() {
   // WhatsApp
   $("#btn-copiar-whats").addEventListener("click", copiarWhats);
 
+  // Olhinho: mostrar/ocultar senha
+  $$(".olho").forEach((btn) => btn.addEventListener("click", () => {
+    const campo = $("#" + btn.dataset.olho);
+    if (!campo) return;
+    const mostrar = campo.type === "password";
+    campo.type = mostrar ? "text" : "password";
+    btn.classList.toggle("ativo", mostrar);
+    btn.setAttribute("aria-pressed", String(mostrar));
+    btn.setAttribute("aria-label", mostrar ? "Ocultar senha" : "Mostrar senha");
+  }));
+
   // Esc fecha o modal visível mais acima
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
