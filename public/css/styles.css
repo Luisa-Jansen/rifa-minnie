@@ -255,6 +255,7 @@ legend { font-weight: 700; color: var(--rosa-escuro); padding: 0 .4rem; }
 .pix-box { margin-top: 1rem; border-top: 1px dashed var(--cinza-borda); padding-top: 1rem; }
 .pix-box h4 { color: var(--rosa-escuro); }
 .pix-qr { width: 180px; margin: .5rem auto; border-radius: 10px; }
+.pix-agradece { display: block; width: 100%; max-width: 360px; height: auto; margin: 1rem auto 0; }
 .pix-linha { margin: .3rem 0; word-break: break-all; font-size: .9rem; }
 
 /* ---------- Painel admin ---------- */
